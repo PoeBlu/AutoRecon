@@ -39,7 +39,7 @@ def main():
 			name = portInfo['name']
 			print 'port: {}\nproduct: {}\nstate: {}\nversion: {}\nname: {}'.format(port, product, state, version, name)
 			print '\n'
-   		if 80 in ports:
+   		if 80 in ports or 443 in ports:
 			print '=' * 50
 			print 'running nikto scan'
 			subprocess.call(['nikto', '-h', 'http://192.168.1.1'])
