@@ -29,6 +29,7 @@ def main():
     for i in portsList:
 	hosts = i.keys()
 	for host in hosts:
+		print 'host: {}'.format(host)
 		ports = i[host]
 		for port in ports:
 			portInfo = results['scan'][host]['tcp'][port]
