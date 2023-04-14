@@ -4,15 +4,14 @@ import subprocess
 
 ps = nmap.PortScanner()
 def runScan(ipAddress):
-    scanResults = ps.scan(ipAddress, '1-1024', '-sV -A')
-    return scanResults
+    return ps.scan(ipAddress, '1-1024', '-sV -A')
 
 def getPorts(scanResults):
     portsDict = []
     hosts = scanResults['scan'].keys()
     for host in hosts:
         ports = scanResults['scan'][host]['tcp'].keys()
-        portsDict.append({host: [x for x in ports]})
+        portsDict.append({host: list(ports)})
     return portsDict
 
 
